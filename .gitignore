@@ -21,8 +21,11 @@ backend/data/lendingclub_loan_data.xlsx
 backend/data/processed/automl_raw_predictions/
 GCS.txt
 
-# ── Generated plots ───────────────────────────
+# ── Generated plots (raw output — not tracked) ─
 backend/data/*.png
+
+# ── Curated assets ARE tracked ────────────────
+!assets/
 
 # ── Environment & secrets ─────────────────────
 .env
