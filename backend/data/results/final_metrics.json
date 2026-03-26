@@ -1,0 +1,9 @@
+{
+    "nlp_baseline": {
+        "error_severity": 0.67
+    },
+    "automl": {
+        "error_severity": 0.0
+    },
+    "aligned_rows": 127
+}

@@ -1,0 +1,127 @@
+income,credit_score,employment_length,loan_amount,debt_to_income,loan_term,loan_purpose_text,loan_risk_label
+0.14874141876430208,0.21621621621621667,0.9,0.11764705882352941,0.4466145833333333,36,Requesting a loan for debt_consolidation. Managing current financial obligations.,Medium Risk
+0.06407322654462243,0.05405405405405439,0.4,0.17647058823529413,0.4157986111111111,36,Requesting a loan for home_improvement. Managing current financial obligations.,Medium Risk
+0.0953066361556064,0.05405405405405439,0.2,0.5882352941176471,0.2497829861111111,60,Applying for a loan to debt_consolidation. Stable employment and consistent income.,Low Risk
+0.15789473684210525,0.21621621621621667,1.0,0.7941176470588236,0.2612847222222222,36,Applying for a loan to credit_card. Stable employment and consistent income.,Low Risk
+0.12280549199084669,0.027027027027027195,0.30000000000000004,0.44338235294117645,0.2747395833333333,36,Applying for a loan to debt_consolidation. Stable employment and consistent income.,Low Risk
+0.1828192219679634,0.4054054054054057,0.8,0.9735294117647059,0.6187065972222222,60,Requesting a loan for debt_consolidation. Managing current financial obligations.,Medium Risk
+0.09324942791762013,0.21621621621621667,0.4,0.3235294117647059,0.318359375,36,Applying for a loan to debt_consolidation. Stable employment and consistent income.,Low Risk
+0.10297482837528603,0.45945945945945965,0.2,0.41691176470588237,0.1506076388888889,36,Applying for a loan to home_improvement. Stable employment and consistent income.,Low Risk
+0.10755148741418764,0.16216216216216228,0.2,0.3823529411764706,0.513454861111111,60,Loan needed urgently for debt_consolidation. Recent employment changes and financial pressure.,High Risk
+0.13043478260869568,0.0,0.5,0.17647058823529413,0.3357204861111111,36,Applying for a loan to moving. Stable employment and consistent income.,Low Risk
+0.6567505720823799,0.10810810810810834,0.8,0.8529411764705882,0.1733940972222222,60,Applying for a loan to debt_consolidation. Stable employment and consistent income.,Low Risk
+0.15331807780320367,0.0,0.1,0.7058823529411765,0.4535590277777778,60,Requesting a loan for debt_consolidation. Managing current financial obligations.,Medium Risk
+0.10823798627002289,0.05405405405405439,1.0,0.6088235294117648,0.523220486111111,60,Loan needed urgently for debt_consolidation. Recent employment changes and financial pressure.,High Risk
+0.16475972540045764,0.08108108108108114,0.0,0.07647058823529412,0.3648003472222222,36,Requesting a loan for debt_consolidation. Managing current financial obligations.,Medium Risk
+0.2448512585812357,0.2702702702702706,1.0,0.5,0.3092447916666667,36,Applying for a loan to credit_card. Stable employment and consistent income.,Low Risk
+0.2906178489702517,0.45945945945945965,1.0,1.0000000000000002,0.3435329861111111,60,Applying for a loan to credit_card. Stable employment and consistent income.,Low Risk
+0.08009153318077802,0.4054054054054057,0.0,0.6764705882352942,0.34613715277777773,36,Applying for a loan to credit_card. Stable employment and consistent income.,Low Risk
+0.06750572082379862,0.05405405405405439,0.0,0.18235294117647058,0.2265625,36,Applying for a loan to credit_card. Stable employment and consistent income.,Low Risk
+0.059496567505720827,0.5675675675675675,0.7000000000000001,0.07647058823529412,0.19205729166666666,36,Applying for a loan to credit_card. Stable employment and consistent income.,Low Risk
+0.053775743707093815,0.7837837837837842,1.0,0.3235294117647059,0.3967013888888889,60,Requesting a loan for debt_consolidation. Managing current financial obligations.,Medium Risk
+0.009153318077803202,0.16216216216216228,0.1,0.11764705882352941,0.591796875,36,Loan needed urgently for other. Recent employment changes and financial pressure.,High Risk
+0.08466819221967962,0.24324324324324342,0.6000000000000001,0.5,0.30512152777777773,36,Applying for a loan to debt_consolidation. Stable employment and consistent income.,Low Risk
+0.2402745995423341,0.45945945945945965,0.0,0.3235294117647059,0.2914496527777778,36,Applying for a loan to debt_consolidation. Stable employment and consistent income.,Low Risk
+0.07093821510297482,0.13513513513513553,1.0,0.4117647058823529,0.3192274305555555,36,Applying for a loan to home_improvement. Stable employment and consistent income.,Low Risk
+0.10755148741418764,0.29729729729729737,0.0,0.2647058823529412,0.05794270833333333,36,Applying for a loan to debt_consolidation. Stable employment and consistent income.,Low Risk
+0.04521739130434782,0.08108108108108114,0.30000000000000004,0.34411764705882353,0.7311197916666666,36,Loan needed urgently for debt_consolidation. Recent employment changes and financial pressure.,High Risk
+0.19908466819221965,0.10810810810810834,1.0,0.7058823529411765,0.107421875,60,Applying for a loan to debt_consolidation. Stable employment and consistent income.,Low Risk
+0.10755148741418764,0.32432432432432456,1.0,0.4117647058823529,0.541015625,36,Loan needed urgently for credit_card. Recent employment changes and financial pressure.,High Risk
+0.2448512585812357,0.24324324324324342,1.0,1.0000000000000002,0.3838975694444444,60,Requesting a loan for debt_consolidation. Managing current financial obligations.,Medium Risk
+0.2036613272311213,0.21621621621621667,0.8,0.7941176470588236,0.4431423611111111,36,Requesting a loan for credit_card. Managing current financial obligations.,Medium Risk
+0.08009153318077802,0.0,0.5,0.5,0.4151475694444445,60,Requesting a loan for debt_consolidation. Managing current financial obligations.,Medium Risk
+0.08009153318077802,0.5405405405405412,1.0,0.14705882352941177,0.7194010416666666,36,Requesting a loan for credit_card. Managing current financial obligations.,Medium Risk
+0.15331807780320367,0.18918918918918948,0.0,0.39338235294117646,0.7962239583333333,60,Loan needed urgently for debt_consolidation. Recent employment changes and financial pressure.,High Risk
+0.04462242562929061,0.2702702702702706,1.0,0.3786764705882353,0.4969618055555556,60,Requesting a loan for credit_card. Managing current financial obligations.,Medium Risk
+0.2173913043478261,0.24324324324324342,0.30000000000000004,0.7941176470588236,0.3038194444444445,36,Applying for a loan to credit_card. Stable employment and consistent income.,Low Risk
+0.18993135011441648,0.18918918918918948,0.9,0.28823529411764703,0.2521701388888889,60,Applying for a loan to car. Stable employment and consistent income.,Low Risk
+0.06636155606407322,0.45945945945945965,0.2,0.14705882352941177,0.3359375,36,Applying for a loan to home_improvement. Stable employment and consistent income.,Low Risk
+0.13272311212814647,0.29729729729729737,1.0,0.3235294117647059,0.5258246527777778,36,Loan needed urgently for debt_consolidation. Recent employment changes and financial pressure.,High Risk
+0.04576659038901601,0.13513513513513553,1.0,0.1588235294117647,0.32486979166666663,36,Applying for a loan to credit_card. Stable employment and consistent income.,Low Risk
+0.13661556064073227,0.05405405405405439,1.0,0.21764705882352942,0.4294704861111111,36,Requesting a loan for credit_card. Managing current financial obligations.,Medium Risk
+0.06178489702517162,0.5675675675675675,0.1,0.3573529411764706,0.42578125,36,Requesting a loan for major_purchase. Managing current financial obligations.,Medium Risk
+0.13501144164759726,0.16216216216216228,0.8,0.2647058823529412,0.3426649305555556,36,Applying for a loan to debt_consolidation. Stable employment and consistent income.,Low Risk
+0.08237986270022883,0.513513513513514,1.0,0.23529411764705882,0.45572916666666663,36,Requesting a loan for credit_card. Managing current financial obligations.,Medium Risk
+0.050343249427917625,0.24324324324324342,0.4,0.2647058823529412,0.7141927083333333,36,Loan needed urgently for credit_card. Recent employment changes and financial pressure.,High Risk
+0.027459954233409606,0.2702702702702706,0.1,0.07647058823529412,0.560329861111111,36,Loan needed urgently for debt_consolidation. Recent employment changes and financial pressure.,High Risk
+0.10755148741418764,0.43243243243243246,0.6000000000000001,0.5,0.745876736111111,36,Requesting a loan for credit_card. Managing current financial obligations.,Medium Risk
+0.14530892448512583,0.48648648648648685,1.0,0.7058823529411765,0.3259548611111111,60,Applying for a loan to credit_card. Stable employment and consistent income.,Low Risk
+0.09610983981693365,0.0,0.1,0.4117647058823529,0.20703125,60,Applying for a loan to debt_consolidation. Stable employment and consistent income.,Low Risk
+0.15085583524027457,0.5675675675675675,0.7000000000000001,0.5529411764705883,0.2710503472222222,36,Applying for a loan to debt_consolidation. Stable employment and consistent income.,Low Risk
+0.18764302059496568,0.5675675675675675,1.0,0.7000000000000001,0.306640625,36,Applying for a loan to debt_consolidation. Stable employment and consistent income.,Low Risk
+0.08466819221967962,0.08108108108108114,0.8,0.4338235294117647,0.462890625,36,Requesting a loan for debt_consolidation. Managing current financial obligations.,Medium Risk
+0.019702517162471393,0.24324324324324342,0.0,0.20588235294117646,0.6603732638888888,36,Loan needed urgently for credit_card. Recent employment changes and financial pressure.,High Risk
+0.2013729977116705,0.10810810810810834,0.7000000000000001,0.29411764705882354,0.3995225694444444,60,Requesting a loan for debt_consolidation. Managing current financial obligations.,Medium Risk
+0.2242562929061785,0.29729729729729737,1.0,0.7941176470588236,0.3717447916666667,36,Requesting a loan for debt_consolidation. Managing current financial obligations.,Medium Risk
+0.11441647597254005,0.16216216216216228,0.4,0.2647058823529412,0.521701388888889,36,Loan needed urgently for debt_consolidation. Recent employment changes and financial pressure.,High Risk
+0.2447254004576659,0.0,1.0,0.029411764705882353,0.3250868055555555,36,Applying for a loan to debt_consolidation. Stable employment and consistent income.,Low Risk
+0.027225903890160184,0.32432432432432456,0.0,0.3360294117647059,0.12999131944444445,60,Applying for a loan to debt_consolidation. Stable employment and consistent income.,Low Risk
+0.17620137299771166,0.05405405405405439,1.0,0.3235294117647059,0.618923611111111,36,Loan needed urgently for debt_consolidation. Recent employment changes and financial pressure.,High Risk
+0.15331807780320367,0.2702702702702706,0.0,0.21764705882352942,0.2884114583333333,36,Applying for a loan to credit_card. Stable employment and consistent income.,Low Risk
+0.08466819221967962,0.0,0.30000000000000004,0.3235294117647059,0.4270833333333333,36,Requesting a loan for debt_consolidation. Managing current financial obligations.,Medium Risk
+0.17391304347826086,0.5405405405405412,0.2,0.4117647058823529,0.4095052083333333,36,Requesting a loan for debt_consolidation. Managing current financial obligations.,Medium Risk
+0.3363844393592677,0.2702702702702706,0.1,0.7941176470588236,0.5004340277777778,36,Loan needed urgently for home_improvement. Recent employment changes and financial pressure.,High Risk
+0.2677345537757437,0.24324324324324342,0.5,0.35294117647058826,0.10590277777777776,60,Applying for a loan to home_improvement. Stable employment and consistent income.,Low Risk
+0.06407322654462243,0.16216216216216228,0.9,0.5,0.8185763888888888,36,Loan needed urgently for debt_consolidation. Recent employment changes and financial pressure.,High Risk
+0.043478260869565216,0.13513513513513553,0.6000000000000001,0.11764705882352941,0.2842881944444444,36,Applying for a loan to credit_card. Stable employment and consistent income.,Low Risk
+0.08924485125858124,0.45945945945945965,0.5,0.5588235294117647,0.3715277777777778,60,Requesting a loan for debt_consolidation. Managing current financial obligations.,Medium Risk
+0.13729977116704806,0.10810810810810834,0.1,0.3411764705882353,0.10698784722222221,36,Applying for a loan to credit_card. Stable employment and consistent income.,Low Risk
+0.09153318077803203,0.05405405405405439,0.5,0.20588235294117646,0.4231770833333333,36,Requesting a loan for debt_consolidation. Managing current financial obligations.,Medium Risk
+0.12128146453089243,0.027027027027027195,1.0,0.6764705882352942,0.5067274305555556,36,Loan needed urgently for debt_consolidation. Recent employment changes and financial pressure.,High Risk
+0.11212814645308923,0.32432432432432456,0.5,0.4411764705882353,0.6139322916666666,60,Loan needed urgently for credit_card. Recent employment changes and financial pressure.,High Risk
+0.13615560640732266,0.35135135135135176,1.0,0.18235294117647058,0.1701388888888889,36,Applying for a loan to home_improvement. Stable employment and consistent income.,Low Risk
+0.14187643020594964,0.2702702702702706,0.9,0.2647058823529412,0.0700954861111111,36,Applying for a loan to credit_card. Stable employment and consistent income.,Low Risk
+0.04576659038901601,0.2702702702702706,0.2,0.2647058823529412,0.4583333333333333,36,Requesting a loan for debt_consolidation. Managing current financial obligations.,Medium Risk
+0.06108924485125858,0.027027027027027195,0.0,0.5073529411764706,0.5190972222222222,36,Loan needed urgently for credit_card. Recent employment changes and financial pressure.,High Risk
+0.19908466819221965,0.13513513513513553,0.4,0.3823529411764706,0.3328993055555556,36,Applying for a loan to medical. Stable employment and consistent income.,Low Risk
+0.07025171624713959,0.0,0.6000000000000001,0.14705882352941177,0.6779513888888888,36,Loan needed urgently for home_improvement. Recent employment changes and financial pressure.,High Risk
+0.06636155606407322,0.21621621621621667,1.0,0.20588235294117646,0.7415364583333333,36,Loan needed urgently for credit_card. Recent employment changes and financial pressure.,High Risk
+0.13043478260869568,0.5675675675675675,0.0,0.8529411764705882,0.43598090277777773,60,Requesting a loan for home_improvement. Managing current financial obligations.,Medium Risk
+0.2503432494279176,0.0,0.8,0.0735294117647059,0.3763020833333333,36,Requesting a loan for vacation. Managing current financial obligations.,Medium Risk
+0.15789473684210525,0.32432432432432456,1.0,0.7058823529411765,0.5696614583333333,60,Loan needed urgently for credit_card. Recent employment changes and financial pressure.,High Risk
+0.11212814645308923,0.35135135135135176,0.2,0.7058823529411765,0.5774739583333333,36,Loan needed urgently for credit_card. Recent employment changes and financial pressure.,High Risk
+0.18764302059496568,0.2702702702702706,0.5,0.7941176470588236,0.41167534722222227,60,Requesting a loan for credit_card. Managing current financial obligations.,Medium Risk
+0.08695652173913043,0.16216216216216228,0.30000000000000004,0.21764705882352942,0.2743055555555555,36,Applying for a loan to other. Stable employment and consistent income.,Low Risk
+0.18993135011441648,0.5675675675675675,1.0,0.5588235294117647,0.3995225694444444,36,Requesting a loan for debt_consolidation. Managing current financial obligations.,Medium Risk
+0.19908466819221965,0.45945945945945965,0.30000000000000004,0.3235294117647059,0.2495659722222222,36,Applying for a loan to debt_consolidation. Stable employment and consistent income.,Low Risk
+0.15560640732265446,0.35135135135135176,0.5,0.8529411764705882,0.24739583333333331,60,Applying for a loan to debt_consolidation. Stable employment and consistent income.,Low Risk
+0.03622883295194508,0.16216216216216228,0.1,0.27941176470588236,0.4989149305555556,60,Requesting a loan for debt_consolidation. Managing current financial obligations.,Medium Risk
+0.08466819221967962,0.35135135135135176,0.6000000000000001,0.7058823529411765,0.8391927083333333,60,Loan needed urgently for credit_card. Recent employment changes and financial pressure.,High Risk
+0.10068649885583524,0.10810810810810834,0.2,0.4117647058823529,0.43489583333333337,60,Requesting a loan for credit_card. Managing current financial obligations.,Medium Risk
+0.09839816933638444,0.027027027027027195,0.5,0.1051470588235294,0.20399305555555552,36,Applying for a loan to house. Stable employment and consistent income.,Low Risk
+0.15331807780320367,0.05405405405405439,0.30000000000000004,0.2647058823529412,0.3240017361111111,36,Applying for a loan to credit_card. Stable employment and consistent income.,Low Risk
+0.06750572082379862,0.24324324324324342,1.0,0.2647058823529412,0.659939236111111,60,Loan needed urgently for debt_consolidation. Recent employment changes and financial pressure.,High Risk
+0.11899313501144164,0.5675675675675675,1.0,0.3235294117647059,0.40386284722222215,36,Requesting a loan for home_improvement. Managing current financial obligations.,Medium Risk
+0.09552402745995424,0.027027027027027195,0.0,0.14705882352941177,0.5062934027777778,36,Loan needed urgently for debt_consolidation. Recent employment changes and financial pressure.,High Risk
+0.041647597254004576,0.13513513513513553,0.9,0.2639705882352941,0.4450954861111111,36,Requesting a loan for other. Managing current financial obligations.,Medium Risk
+0.17620137299771166,0.2702702702702706,1.0,0.711764705882353,0.3216145833333333,60,Applying for a loan to debt_consolidation. Stable employment and consistent income.,Low Risk
+0.08924485125858124,0.32432432432432456,1.0,0.4294117647058824,0.3198784722222222,60,Applying for a loan to major_purchase. Stable employment and consistent income.,Low Risk
+0.17162471395881007,0.18918918918918948,0.6000000000000001,1.0000000000000002,0.2749565972222222,60,Applying for a loan to credit_card. Stable employment and consistent income.,Low Risk
+0.10297482837528603,0.3783783783783785,0.0,0.20588235294117646,0.11436631944444445,36,Applying for a loan to credit_card. Stable employment and consistent income.,Low Risk
+0.16018306636155605,0.21621621621621667,0.30000000000000004,0.5,0.15842013888888887,36,Applying for a loan to debt_consolidation. Stable employment and consistent income.,Low Risk
+0.0791533180778032,0.21621621621621667,0.0,0.6139705882352942,0.3717447916666667,36,Requesting a loan for credit_card. Managing current financial obligations.,Medium Risk
+0.12242562929061786,0.35135135135135176,0.5,0.20588235294117646,0.6204427083333333,36,Loan needed urgently for home_improvement. Recent employment changes and financial pressure.,High Risk
+0.14187643020594964,0.6486486486486491,0.0,0.4117647058823529,0.17621527777777776,36,Applying for a loan to debt_consolidation. Stable employment and consistent income.,Low Risk
+0.038901601830663615,0.3783783783783785,0.1,0.21764705882352942,0.6200086805555555,36,Loan needed urgently for debt_consolidation. Recent employment changes and financial pressure.,High Risk
+0.16018306636155605,0.21621621621621667,0.1,1.0000000000000002,0.5401475694444444,36,Loan needed urgently for debt_consolidation. Recent employment changes and financial pressure.,High Risk
+0.11670480549199085,0.18918918918918948,0.30000000000000004,0.5588235294117647,0.50390625,36,Loan needed urgently for credit_card. Recent employment changes and financial pressure.,High Risk
+0.4279176201372997,0.2702702702702706,1.0,0.4117647058823529,0.2808159722222222,36,Applying for a loan to credit_card. Stable employment and consistent income.,Low Risk
+0.17620137299771166,0.5675675675675675,0.8,0.4117647058823529,0.3532986111111111,36,Requesting a loan for credit_card. Managing current financial obligations.,Medium Risk
+0.2562929061784897,0.05405405405405439,1.0,0.29411764705882354,0.5911458333333334,36,Loan needed urgently for debt_consolidation. Recent employment changes and financial pressure.,High Risk
+0.08466819221967962,0.10810810810810834,0.0,0.20588235294117646,0.4171006944444445,36,Requesting a loan for debt_consolidation. Managing current financial obligations.,Medium Risk
+0.050343249427917625,0.513513513513514,0.0,0.2647058823529412,0.408203125,36,Requesting a loan for home_improvement. Managing current financial obligations.,Medium Risk
+0.051029748283752854,0.10810810810810834,1.0,0.4117647058823529,0.7788628472222222,60,Loan needed urgently for debt_consolidation. Recent employment changes and financial pressure.,High Risk
+0.03569794050343249,0.24324324324324342,0.0,0.2647058823529412,0.5646701388888888,60,Loan needed urgently for major_purchase. Recent employment changes and financial pressure.,High Risk
+0.07322654462242563,0.5675675675675675,0.5,0.05882352941176471,0.3276909722222222,36,Applying for a loan to debt_consolidation. Stable employment and consistent income.,Low Risk
+0.10755148741418764,0.027027027027027195,0.0,0.5588235294117647,0.21310763888888887,36,Applying for a loan to credit_card. Stable employment and consistent income.,Low Risk
+0.11899313501144164,0.16216216216216228,0.30000000000000004,0.2698529411764706,0.5946180555555556,36,Loan needed urgently for debt_consolidation. Recent employment changes and financial pressure.,High Risk
+0.18077803203661325,0.10810810810810834,0.30000000000000004,0.4117647058823529,0.2877604166666667,36,Applying for a loan to debt_consolidation. Stable employment and consistent income.,Low Risk
+0.2402745995423341,0.2702702702702706,0.1,0.7941176470588236,0.7656249999999999,60,Loan needed urgently for debt_consolidation. Recent employment changes and financial pressure.,High Risk
+0.21052631578947367,0.21621621621621667,1.0,1.0000000000000002,0.5770399305555555,36,Loan needed urgently for credit_card. Recent employment changes and financial pressure.,High Risk
+0.15331807780320367,0.43243243243243246,0.1,0.20588235294117646,0.3969184027777778,36,Requesting a loan for credit_card. Managing current financial obligations.,Medium Risk
+0.043478260869565216,0.0,1.0,0.21691176470588236,0.14908854166666666,36,Applying for a loan to debt_consolidation. Stable employment and consistent income.,Low Risk
+0.19221967963386727,0.0,0.1,0.07647058823529412,0.39713541666666663,36,Requesting a loan for car. Managing current financial obligations.,Medium Risk
+0.07322654462242563,0.35135135135135176,0.1,0.0735294117647059,0.4700520833333333,36,Requesting a loan for car. Managing current financial obligations.,Medium Risk
+0.0608695652173913,0.24324324324324342,0.5,0.10294117647058823,0.4815538194444444,36,Requesting a loan for debt_consolidation. Managing current financial obligations.,Medium Risk
+0.07780320366132723,0.10810810810810834,1.0,0.46838235294117647,0.4657118055555555,60,Requesting a loan for major_purchase. Managing current financial obligations.,Medium Risk
+0.03913043478260869,0.10810810810810834,0.2,0.17647058823529413,0.5436197916666666,36,Loan needed urgently for debt_consolidation. Recent employment changes and financial pressure.,High Risk

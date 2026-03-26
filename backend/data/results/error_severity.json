@@ -1,0 +1,10 @@
+{
+    "NLP Baseline": {
+        "average_error_severity": 0.67,
+        "critical_errors": 6
+    },
+    "AutoML": {
+        "average_error_severity": 2.82,
+        "critical_errors": 26
+    }
+}
