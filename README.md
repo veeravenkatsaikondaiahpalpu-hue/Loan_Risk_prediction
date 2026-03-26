@@ -1,220 +1,281 @@
-# Hybrid Loan Risk Decision System
+<div align="center">
 
-An end-to-end, cost-aware loan risk assessment system combining **Google Cloud Natural Language** (NLP), **Vertex AI AutoML**, and a rule-based offline proxy — with a Streamlit UI and a full error-severity evaluation framework.
+# 🏦 Hybrid Loan Risk Decision System
+
+**An end-to-end machine learning pipeline for intelligent loan risk assessment**
+
+[![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+[![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://streamlit.io/)
+[![Google Cloud](https://img.shields.io/badge/Google_Cloud-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white)](https://cloud.google.com/)
+[![scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)](https://scikit-learn.org/)
+[![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)](https://pandas.pydata.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
+[![Tests](https://img.shields.io/badge/Tests-34%20passing-brightgreen?style=for-the-badge&logo=pytest)](tests/)
+
+<br/>
+
+> Built on **50,000 real LendingClub loan records** · Deployed on **Google Cloud Vertex AI** · Real-time predictions via **Streamlit**
+
+</div>
 
 ---
 
-## Table of Contents
+## 📌 Project Overview
 
-1. [Project Overview](#project-overview)
-2. [Architecture](#architecture)
-3. [Project Structure](#project-structure)
-4. [Setup](#setup)
-5. [Running the App](#running-the-app)
-6. [Running Tests](#running-tests)
-7. [Data Pipeline & Leakage Prevention](#data-pipeline--leakage-prevention)
-8. [Error Severity Framework](#error-severity-framework)
-9. [Environment Variables](#environment-variables)
+This project tackles a real-world financial problem: **how do you assess loan risk accurately and explainably at scale?**
 
----
+A hybrid ML pipeline is designed that combines three complementary approaches:
 
-## Project Overview
-
-Given an applicant's financial profile and a free-text loan purpose description, the system produces a three-class risk label: **Low Risk**, **Medium Risk**, or **High Risk**.
-
-Three inference components are blended into a single decision:
-
-| Component | Description | Online? |
+| Model | Type | Purpose |
 |---|---|---|
-| **NLP (Google Natural Language)** | Extracts distress/speculative signals from the loan purpose text | Yes (optional) |
-| **Vertex AI AutoML** | Deployed AutoML endpoint trained on LendingClub data | Yes (paid, optional) |
-| **Proxy (Offline Rules)** | Threshold-based fallback using normalised numeric features | Always available |
+| 🧠 **Google NLP** | Cloud API | Extracts risk signals from free-text loan descriptions |
+| ☁️ **Vertex AI AutoML** | Cloud ML | High-accuracy predictions using a deployed GCP endpoint |
+| ⚙️ **Offline Proxy** | Rule-based | Cost-free fallback using normalised financial features |
 
-The final decision follows a confidence-weighted hierarchy: if NLP confidence ≥ 0.8, the NLP prediction wins; otherwise the AutoML/Proxy result is used.
-
----
-
-## Architecture
-
-```
-streamlit_app.py  /  backend/app.py (CLI)
-        │
-        ▼
-backend/src/inferences/hybrid_decision.py  (predict_hybrid)
-        ├── predict_nlp         ← Google NLP signal extractor
-        ├── predict_vertex      ← Vertex AI AutoML endpoint
-        ├── predict_proxy       ← Offline rule-based fallback
-        └── normalize_inputs    ← Feature scaler (0-1 range)
-
-backend/src/evaluations/
-        ├── error_severity_dynamic.py  ← CANONICAL severity module
-        ├── error_severity.py          ← Batch CSV evaluation
-        └── error_analysis.py          ← Cross-model comparison
-
-backend/src/data_cleaning/
-        └── data_cleaning.py    ← Preprocessing + leak-free splitting
-
-backend/src/training_model/
-        └── main_advanced_2.0.py  ← Learning curve experiments
-```
+The system outputs a **3-class risk label** (Low / Medium / High Risk) and explains *why* it made the decision — critical for real financial use cases.
 
 ---
 
-## Project Structure
+## 🎯 Key Results
+
+<div align="center">
+
+| Metric | Value |
+|---|---|
+| 📊 Dataset size | 50,000 LendingClub loan records |
+| 🎯 NLP Average Error Severity | **0.67 / 10** |
+| ☁️ Vertex AI Average Error Severity | **0.00 / 10** (on aligned test set) |
+| 🚨 NLP Critical Errors | 6 |
+| ☁️ Vertex AI Critical Errors | 0 |
+| 🧪 Test coverage | 34 unit + integration tests |
+| 🏗️ Models evaluated | Logistic Regression, Random Forest, Gradient Boosting |
+
+</div>
+
+---
+
+## 📊 Model Insights
+
+<table>
+  <tr>
+    <td><img src="assets/plots/learning_curve_accuracy.png" alt="Learning Curve - Accuracy" width="400"/></td>
+    <td><img src="assets/plots/learning_curve_severity.png" alt="Learning Curve - Error Severity" width="400"/></td>
+  </tr>
+  <tr>
+    <td align="center"><b>Learning Curve — Accuracy</b></td>
+    <td align="center"><b>Learning Curve — Error Severity</b></td>
+  </tr>
+  <tr>
+    <td><img src="assets/plots/rf_feature_importance.png" alt="Random Forest Feature Importance" width="400"/></td>
+    <td><img src="assets/plots/gb_feature_importance.png" alt="Gradient Boosting Feature Importance" width="400"/></td>
+  </tr>
+  <tr>
+    <td align="center"><b>Feature Importance — Random Forest</b></td>
+    <td align="center"><b>Feature Importance — Gradient Boosting</b></td>
+  </tr>
+</table>
+
+---
+
+## 🏗️ Architecture
+
+```
+┌─────────────────────────────────────────────────────┐
+│              Streamlit UI  /  CLI (app.py)           │
+└──────────────────────┬──────────────────────────────┘
+                       │
+                       ▼
+┌─────────────────────────────────────────────────────┐
+│            predict_hybrid()  — Orchestrator          │
+│                                                     │
+│  ┌────────────┐  ┌──────────────┐  ┌─────────────┐ │
+│  │ predict_nlp│  │predict_vertex│  │predict_proxy│ │
+│  │ Google NLP │  │  Vertex AI   │  │  Offline    │ │
+│  │  (Cloud)   │  │  AutoML      │  │  Rules      │ │
+│  └────────────┘  └──────────────┘  └─────────────┘ │
+│                                                     │
+│  Decision Logic: NLP conf ≥ 0.8 → NLP wins         │
+│                  otherwise       → AutoML/Proxy     │
+└──────────────────────┬──────────────────────────────┘
+                       │
+                       ▼
+┌─────────────────────────────────────────────────────┐
+│         Error Severity Evaluation Framework          │
+│   Asymmetric 0–10 penalty scale (financial domain)  │
+└─────────────────────────────────────────────────────┘
+```
+
+---
+
+## 🛠️ Tech Stack
+
+<div align="center">
+
+| Layer | Technologies |
+|---|---|
+| **Language** | Python 3.10+ |
+| **Data & ML** | Pandas, NumPy, scikit-learn |
+| **Cloud** | Google Cloud Vertex AI, Google Natural Language API |
+| **UI** | Streamlit |
+| **Visualisation** | Matplotlib |
+| **Testing** | Pytest, unittest.mock |
+| **CI/CD** | GitHub Actions |
+| **Version Control** | Git, GitHub |
+
+</div>
+
+---
+
+## 📁 Project Structure
 
 ```
 ADS_project/
-├── streamlit_app.py              # Streamlit web interface
-├── requirements.txt
-├── README.md
 │
-├── backend/
-│   ├── app.py                    # CLI entry point
-│   └── src/
-│       ├── data_cleaning/
-│       │   ├── data_cleaning.py          # Main preprocessing (Excel → CSVs)
-│       │   └── data_for_custom_model.py  # 50k sample for evaluation
-│       │
-│       ├── evaluations/
-│       │   ├── error_severity_dynamic.py # ← Canonical SEVERITY_MAP + compute_error_severity
-│       │   ├── error_severity.py         # Batch evaluation (CSV-based)
-│       │   ├── error_analysis.py         # Cross-model analysis
-│       │   └── merge_automl_predictions.py
-│       │
-│       ├── inferences/
-│       │   ├── hybrid_decision.py   # predict_hybrid — main orchestrator
-│       │   ├── automl_proxy.py      # predict_proxy  — offline fallback
-│       │   ├── nlp_predict.py       # predict_nlp    — Google NLP
-│       │   ├── vertex_ai_predict.py # predict_vertex — Vertex AI
-│       │   └── normalization.py     # normalize_inputs
-│       │
-│       └── training_model/
-│           └── main_advanced_2.0.py # Learning curves + feature importance
+├── 📱 streamlit_app.py          # Interactive web application
+├── 🖥️  backend/app.py           # CLI entry point
+├── 📋 requirements.txt
 │
-├── tests/
-│   ├── conftest.py
+├── backend/src/
+│   ├── 🔮 inferences/
+│   │   ├── hybrid_decision.py   # Main orchestrator
+│   │   ├── automl_proxy.py      # Offline rule-based model
+│   │   ├── nlp_predict.py       # Google NLP integration
+│   │   ├── vertex_ai_predict.py # Vertex AI endpoint caller
+│   │   └── normalization.py     # Feature scaling utilities
+│   │
+│   ├── 📊 evaluations/
+│   │   ├── error_severity_dynamic.py  # ← Canonical severity module
+│   │   ├── error_severity.py          # Batch CSV evaluation
+│   │   └── error_analysis.py          # Cross-model comparison
+│   │
+│   ├── 🧹 data_cleaning/
+│   │   └── data_cleaning.py     # Leak-free preprocessing pipeline
+│   │
+│   └── 🤖 training_model/
+│       └── main_advanced_2.0.py # Learning curve experiments
+│
+├── 🧪 tests/                    # 34 unit & integration tests
 │   ├── test_normalization.py
 │   ├── test_automl_proxy.py
 │   ├── test_error_severity.py
 │   └── test_hybrid_decision.py
 │
-└── backend/data/
-    ├── loan_50k_clean.csv
-    └── processed/
-        ├── loan_train.csv
-        ├── loan_val.csv
-        └── loan_test.csv
+└── 📈 assets/plots/             # Model visualisations
 ```
 
 ---
 
-## Setup
+## 🚀 Quick Start
 
-### 1. Clone and create a virtual environment
+### 1. Clone & install
 
 ```bash
-git clone <repo-url>
+git clone https://github.com/veeravenkatsaikondaiahpalpu-hue/ADS_project.git
 cd ADS_project
 python -m venv venv
 # Windows
 venv\Scripts\activate
 # macOS / Linux
 source venv/bin/activate
-```
 
-### 2. Install dependencies
-
-```bash
 pip install -r requirements.txt
 ```
 
-### 3. Google Cloud credentials (optional — only needed for NLP / Vertex AI)
-
-```bash
-gcloud auth application-default login
-```
-
-Or set the `GOOGLE_APPLICATION_CREDENTIALS` environment variable to your service-account JSON key path.
-
----
-
-## Running the App
-
-### Streamlit UI
+### 2. Run the Streamlit app
 
 ```bash
 streamlit run streamlit_app.py
 ```
 
-The sidebar lets you toggle NLP and Vertex AI on/off. The offline **Proxy** model is always available — no cloud credentials required.
+Open `http://localhost:8501` — the **Proxy model works fully offline**, no cloud credentials needed.
 
-### CLI
+### 3. Run the CLI
 
 ```bash
 python -m backend.app
 ```
 
----
-
-## Running Tests
+### 4. Run tests
 
 ```bash
-# All tests
 pytest tests/ -v
-
-# With coverage report
-pytest tests/ -v --cov=backend --cov-report=term-missing
 ```
 
-The test suite is fully **offline** — Google Cloud NLP and Vertex AI are mocked with `unittest.mock`.
+> All 34 tests run **fully offline** — Google Cloud APIs are mocked with `unittest.mock`.
 
 ---
 
-## Data Pipeline & Leakage Prevention
+## ☁️ Google Cloud Setup (optional)
 
-The preprocessing pipeline in `data_cleaning.py` is designed to be **leak-free**:
+Needed only for live NLP and Vertex AI predictions.
 
-| Step | What happens |
-|---|---|
-| 1 | Raw LendingClub data loaded |
-| 2 | Columns selected & renamed |
-| 3 | Missing values imputed |
-| 4 | Risk labels assigned from **raw** feature values |
-| 5 | **Train / Val / Test split performed** |
-| 6 | `MinMaxScaler` fitted **on train only**, then applied to all three sets |
-| 7 | Splits saved as `loan_train.csv`, `loan_val.csv`, `loan_test.csv` |
+```bash
+gcloud auth application-default login
+```
 
-> **Why this matters:** Fitting the scaler on the full dataset before splitting leaks test-set statistics (min/max) into the preprocessing step, making model performance appear better than it really is.
+Or set environment variables:
 
-The `loan_purpose_text` field is generated from the raw `purpose` category column only — **not** from the risk label — to avoid NLP having direct access to the target variable.
+```bash
+export VERTEX_PROJECT_ID=your-project-id
+export VERTEX_REGION=us-central1
+export VERTEX_ENDPOINT_ID=your-endpoint-id
+```
 
 ---
 
-## Error Severity Framework
+## 🔬 Data Pipeline — Leakage-Free Design
 
-Risk misclassifications are not all equal. Approving a **High Risk** loan that should have been rejected is far costlier than conservatively flagging a **Low Risk** applicant.
+A key engineering decision in this project is ensuring **no data leakage** between training and evaluation:
 
-All evaluation code shares a single canonical severity map defined in `error_severity_dynamic.py`:
+```
+Raw Excel data
+      │
+      ▼
+Feature selection + cleaning
+      │
+      ▼
+Risk label assignment (raw values)        ← labels from RAW features
+      │
+      ▼
+Loan purpose text generation (purpose column only)  ← NOT from the label
+      │
+      ▼
+Train / Val / Test split (stratified, 75/12.5/12.5)
+      │
+      ▼
+MinMaxScaler fit on TRAIN ONLY            ← no test stats leak into scaler
+      │
+      ▼
+Transform val + test with train scaler
+```
+
+---
+
+## 📐 Error Severity Framework
+
+Not all wrong predictions are equal. A **missed High Risk** borrower costs far more than a conservative false rejection. The project uses an asymmetric penalty scale:
 
 | True → Predicted | Severity | Critical? |
 |---|---|---|
-| High Risk → Low Risk | **10** | Yes |
-| High Risk → Medium Risk | **7** | Yes |
-| Medium Risk → Low Risk | 5 | No |
-| Low Risk → High Risk | 4 | No |
-| Medium Risk → High Risk | 3 | No |
-| Low Risk → Medium Risk | 2 | No |
+| High Risk → Low Risk | 🔴 **10** | ✅ Yes |
+| High Risk → Medium Risk | 🔴 **7** | ✅ Yes |
+| Medium Risk → Low Risk | 🟠 5 | ❌ No |
+| Low Risk → High Risk | 🟡 4 | ❌ No |
+| Medium Risk → High Risk | 🟡 3 | ❌ No |
+| Low Risk → Medium Risk | 🟢 2 | ❌ No |
 
-Critical errors are those with severity ≥ 7 (both cases where a high-risk borrower was classified as lower risk).
+This metric is computed consistently across all models using a single canonical module — replacing three different ad-hoc implementations that existed previously.
 
 ---
 
-## Environment Variables
+## 👤 Author
 
-| Variable | Default | Description |
-|---|---|---|
-| `VERTEX_PROJECT_ID` | `prefab-surfer-481011-s6` | Google Cloud project ID |
-| `VERTEX_REGION` | `us-central1` | Vertex AI region |
-| `VERTEX_ENDPOINT_ID` | `5611292171412963328` | Deployed AutoML endpoint ID |
+**Veeravenkata Sai Kondaiah Palpu**
 
-Set these in a `.env` file or export them before running to override the defaults without modifying source code.
+[![GitHub](https://img.shields.io/badge/GitHub-veeravenkatsaikondaiahpalpu--hue-181717?style=flat&logo=github)](https://github.com/veeravenkatsaikondaiahpalpu-hue)
+
+---
+
+## 📄 License
+
+This project is licensed under the **MIT License** — see [LICENSE](LICENSE) for details.
