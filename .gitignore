@@ -1,0 +1,48 @@
+# ── Python ────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# ── Virtual environment ───────────────────────
+venv/
+.venv/
+env/
+ENV/
+
+# ── Data files (large / sensitive) ───────────
+backend/data/lendingclub_loan_data.xlsx
+backend/data/processed/automl_raw_predictions/
+GCS.txt
+
+# ── Generated plots ───────────────────────────
+backend/data/*.png
+
+# ── Environment & secrets ─────────────────────
+.env
+*.json.key
+*credentials*.json
+service_account*.json
+
+# ── IDE & OS ──────────────────────────────────
+.vscode/
+.idea/
+*.DS_Store
+Thumbs.db
+
+# ── Pytest / coverage ─────────────────────────
+.pytest_cache/
+.coverage
+htmlcov/
+
+# ── Jupyter ───────────────────────────────────
+.ipynb_checkpoints/
+
+# ── Claude Code ───────────────────────────────
+.claude/
