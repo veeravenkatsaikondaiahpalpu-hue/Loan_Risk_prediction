@@ -272,6 +272,7 @@ This metric is computed consistently across all models using a single canonical 
 
 **Veeravenkata Sai Kondaiah Palpu**
 
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Veera_Venkat_Sai-0A66C2?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/veera-venkat-sai-kondaiahpalpu-942509198/)
 [![GitHub](https://img.shields.io/badge/GitHub-veeravenkatsaikondaiahpalpu--hue-181717?style=flat&logo=github)](https://github.com/veeravenkatsaikondaiahpalpu-hue)
 
 ---
