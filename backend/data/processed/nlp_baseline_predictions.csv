@@ -1,0 +1,21 @@
+loan_purpose_text,loan_risk_label,predicted_risk
+Loan needed urgently for debt_consolidation. Recent employment changes and financial pressure.,High Risk,Low Risk
+Applying for a loan to debt_consolidation. Stable employment and consistent income.,Low Risk,Low Risk
+Applying for a loan to house. Stable employment and consistent income.,Low Risk,Low Risk
+Loan needed urgently for debt_consolidation. Recent employment changes and financial pressure.,High Risk,Low Risk
+Applying for a loan to debt_consolidation. Stable employment and consistent income.,Low Risk,Low Risk
+Requesting a loan for debt_consolidation. Managing current financial obligations.,Medium Risk,Low Risk
+Applying for a loan to other. Stable employment and consistent income.,Low Risk,Low Risk
+Applying for a loan to debt_consolidation. Stable employment and consistent income.,Low Risk,Low Risk
+Applying for a loan to credit_card. Stable employment and consistent income.,Low Risk,Low Risk
+Requesting a loan for other. Managing current financial obligations.,Medium Risk,Low Risk
+Loan needed urgently for debt_consolidation. Recent employment changes and financial pressure.,High Risk,Low Risk
+Requesting a loan for credit_card. Managing current financial obligations.,Medium Risk,Low Risk
+Applying for a loan to debt_consolidation. Stable employment and consistent income.,Low Risk,Low Risk
+Requesting a loan for debt_consolidation. Managing current financial obligations.,Medium Risk,Low Risk
+Applying for a loan to debt_consolidation. Stable employment and consistent income.,Low Risk,Low Risk
+Applying for a loan to credit_card. Stable employment and consistent income.,Low Risk,Low Risk
+Requesting a loan for debt_consolidation. Managing current financial obligations.,Medium Risk,Low Risk
+Loan needed urgently for debt_consolidation. Recent employment changes and financial pressure.,High Risk,Low Risk
+Loan needed urgently for debt_consolidation. Recent employment changes and financial pressure.,High Risk,Low Risk
+Loan needed urgently for credit_card. Recent employment changes and financial pressure.,High Risk,Low Risk
