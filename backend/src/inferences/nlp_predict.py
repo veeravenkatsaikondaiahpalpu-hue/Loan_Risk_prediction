@@ -1,6 +1,6 @@
-from google.cloud import language_v1
-
-client = language_v1.LanguageServiceClient()
+# google-cloud-language is imported lazily inside predict_nlp so that
+# this module can be imported in offline / CI environments without the
+# package installed.
 
 # -----------------------------
 # Keyword Dictionaries
@@ -38,6 +38,10 @@ def predict_nlp(text: str) -> dict:
     -------
     dict with keys: prediction, confidence, risk_score, signals
     """
+    from google.cloud import language_v1  # lazy import — avoids hard dep in CI
+
+    client = language_v1.LanguageServiceClient()
+
     document = language_v1.Document(
         content=text,
         type_=language_v1.Document.Type.PLAIN_TEXT,

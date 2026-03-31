@@ -1,6 +1,7 @@
 import os
 
-from google.cloud import aiplatform
+# google-cloud-aiplatform is imported lazily inside predict_vertex so that
+# this module can be imported in offline / CI environments without the package.
 
 PROJECT_ID  = os.environ.get("VERTEX_PROJECT_ID",  "prefab-surfer-481011-s6")
 REGION      = os.environ.get("VERTEX_REGION",       "us-central1")
@@ -17,6 +18,7 @@ def predict_vertex(feature_dict: dict) -> dict:
     RuntimeError if the API call fails or the response format is unexpected.
     """
     try:
+        from google.cloud import aiplatform  # lazy import — avoids hard dep in CI
         aiplatform.init(project=PROJECT_ID, location=REGION)
         endpoint = aiplatform.Endpoint(ENDPOINT_ID)
         response = endpoint.predict(instances=[feature_dict])
