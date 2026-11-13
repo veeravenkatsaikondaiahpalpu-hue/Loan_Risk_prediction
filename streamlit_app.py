@@ -27,6 +27,8 @@ st.sidebar.title("Model Controls")
 run_nlp = st.sidebar.checkbox(
     "Enable NLP analysis (Explainable)",
     value=True,
+    help="Keyword risk signals run offline. Cloud sentiment is added "
+         "automatically when Google Cloud credentials are present.",
 )
 
 use_vertex = st.sidebar.checkbox(
@@ -165,7 +167,9 @@ def load_severity_metrics(csv_path: str) -> dict:
         for _, row in df_val.iterrows()
     ]
 
-    return compute_error_severity(y_true, y_pred)
+    metrics = compute_error_severity(y_true, y_pred)
+    metrics["evaluated_rows"] = len(df_val)
+    return metrics
 
 
 try:
@@ -173,6 +177,12 @@ try:
 
     severity = load_severity_metrics("backend/data/loan_50k_clean.csv")
 
+    st.caption(
+        f"Offline proxy model scored against ground-truth labels across all "
+        f"{severity['evaluated_rows']:,} rows. Severity is an asymmetric 0–10 "
+        f"scale: approving a high-risk applicant is penalised more heavily than "
+        f"rejecting a good one."
+    )
     st.metric("Average Error Severity", severity["average_error_severity"])
     st.metric("Critical Errors",        severity["critical_errors"])
 

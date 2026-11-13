@@ -38,28 +38,30 @@ def predict_nlp(text: str) -> dict:
     -------
     dict with keys: prediction, confidence, risk_score, signals
     """
-    from google.cloud import language_v1  # lazy import — avoids hard dep in CI
+    # Cloud sentiment is an optional enrichment: if credentials are absent
+    # (public demo, CI, offline run) the keyword signals below still apply.
+    sentiment_score = None
+    try:
+        from google.cloud import language_v1  # lazy import — avoids hard dep in CI
 
-    client = language_v1.LanguageServiceClient()
+        client = language_v1.LanguageServiceClient()
 
-    document = language_v1.Document(
-        content=text,
-        type_=language_v1.Document.Type.PLAIN_TEXT,
-    )
+        document = language_v1.Document(
+            content=text,
+            type_=language_v1.Document.Type.PLAIN_TEXT,
+        )
 
-    sentiment_score = client.analyze_sentiment(
-        request={"document": document}
-    ).document_sentiment.score
-
-    entities = client.analyze_entities(
-        request={"document": document}
-    ).entities
+        sentiment_score = client.analyze_sentiment(
+            request={"document": document}
+        ).document_sentiment.score
+    except Exception:
+        sentiment_score = None
 
     full_text   = text.lower()
     risk_score  = 0.0
     signals     = []
 
-    if sentiment_score < -0.3:
+    if sentiment_score is not None and sentiment_score < -0.3:
         risk_score += 1.5
         signals.append("negative_sentiment")
 
@@ -94,4 +96,5 @@ def predict_nlp(text: str) -> dict:
         "confidence": confidence,
         "risk_score": round(risk_score, 2),
         "signals":    signals,
+        "sentiment_available": sentiment_score is not None,
     }
