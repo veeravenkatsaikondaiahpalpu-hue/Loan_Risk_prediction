@@ -92,17 +92,41 @@ if st.button("Run Risk Assessment"):
         st.stop()
 
     with st.spinner("Running hybrid decision system..."):
-        result = predict_hybrid(
-            text=text,
-            income=income,
-            credit_score=credit_score,
-            dti=dti,
-            loan_amount=loan_amount,
-            employment_length=employment_length,
-            loan_term=loan_term,
-            run_nlp=run_nlp,
-            use_vertex=use_vertex,
-        )
+        try:
+            result = predict_hybrid(
+                text=text,
+                income=income,
+                credit_score=credit_score,
+                dti=dti,
+                loan_amount=loan_amount,
+                employment_length=employment_length,
+                loan_term=loan_term,
+                run_nlp=run_nlp,
+                use_vertex=use_vertex,
+            )
+        except Exception as exc:
+            if use_vertex:
+                # The live endpoint is a paid, credentialled resource and is not
+                # attached to the public demo. Fall back rather than show a trace.
+                st.warning(
+                    "Vertex AI endpoint unavailable here (it needs Google Cloud "
+                    "credentials and a running paid endpoint). Falling back to the "
+                    "offline proxy model."
+                )
+                result = predict_hybrid(
+                    text=text,
+                    income=income,
+                    credit_score=credit_score,
+                    dti=dti,
+                    loan_amount=loan_amount,
+                    employment_length=employment_length,
+                    loan_term=loan_term,
+                    run_nlp=run_nlp,
+                    use_vertex=False,
+                )
+            else:
+                st.error(f"Prediction failed: {exc}")
+                st.stop()
 
     # =====================================================
     # Model Outputs
