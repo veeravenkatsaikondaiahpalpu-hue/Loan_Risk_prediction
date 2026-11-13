@@ -17,6 +17,14 @@ def predict_vertex(feature_dict: dict) -> dict:
     ------
     RuntimeError if the API call fails or the response format is unexpected.
     """
+    from backend.src.inferences.gcp_auth import adc_available
+
+    if not adc_available():
+        # Fail immediately rather than blocking on a metadata-server probe.
+        raise RuntimeError(
+            "Vertex AI prediction failed: no Google Cloud credentials configured"
+        )
+
     try:
         from google.cloud import aiplatform  # lazy import — avoids hard dep in CI
         aiplatform.init(project=PROJECT_ID, location=REGION)

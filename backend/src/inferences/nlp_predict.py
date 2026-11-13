@@ -42,6 +42,11 @@ def predict_nlp(text: str) -> dict:
     # (public demo, CI, offline run) the keyword signals below still apply.
     sentiment_score = None
     try:
+        from backend.src.inferences.gcp_auth import adc_available
+
+        if not adc_available():
+            raise RuntimeError("no Google Cloud credentials configured")
+
         from google.cloud import language_v1  # lazy import — avoids hard dep in CI
 
         client = language_v1.LanguageServiceClient()
